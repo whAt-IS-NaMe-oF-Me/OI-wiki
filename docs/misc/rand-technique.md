@@ -1,4 +1,4 @@
-author: Ir1d, partychicken, ouuan, Marcythm, TianyiQ
+author: Ir1d, partychicken, ouuan, Marcythm, TianyiQ, whAt-IS-NaMe-oF-Me
 
 ## 概述
 
@@ -18,9 +18,7 @@ author: Ir1d, partychicken, ouuan, Marcythm, TianyiQ
 
 庞大的解空间中有一个（或多个）解是我们想要的。我们可以尝试进行多次撒网，只要有一次能够网住目标解就能成功。
 
-### 例：三部图的判定
-
-???+ note "问题"
+???+ note "例：三部图的判定"
     给定一张 $n$ 个结点、$m$ 条边的简单无向图，用 RGB 三种颜色给每个结点染色 满足任意一对邻居都不同色，或者报告无解。
 
 对每个点 $v$，从 $\{R,G,B\}$ 中等概率独立随机地选一种颜色 $C_v$，并钦定 $v$  **不** 被染成 $C_v$。最优解恰好符合这些限制的概率，显然是 $\big(\frac 23\big)^n$。
@@ -37,10 +35,8 @@ author: Ir1d, partychicken, ouuan, Marcythm, TianyiQ
 
 **回顾**：本题中「解空间」就是集合 $\{R,G,B\}^n$，我们每次通过随机施加限制来在一个缩小的范围内搜寻「目标解」——即合法的染色方案。
 
-### 例：[CodeChef SELEDGE](https://www.codechef.com/problems/SELEDGE)
-
-???+ note "简要题意"
-    给定一张点、边都有非负权值的无向图，找到一个大小 $\leq K$ 的边集合 $S$，以最大化与 $S$ 相连的点的权值和减去 $S$ 的边权和。一个点的权值只被计算一次。
+???+ note "例：[CodeChef SELEDGE](https://www.codechef.com/problems/SELEDGE)"
+    简要题意：给定一张点、边都有非负权值的无向图，找到一个大小 $\leq K$ 的边集合 $S$，以最大化与 $S$ 相连的点的权值和减去 $S$ 的边权和。一个点的权值只被计算一次。
 
 观察：如果选出的边中有三条边构成一条链，则删掉中间的那条一定不劣；如果选出的边中有若干条构成环，则删掉任何一条一定不劣。
 
@@ -79,10 +75,8 @@ author: Ir1d, partychicken, ouuan, Marcythm, TianyiQ
 
 我们需要确定一个集合中的任意一个元素，为此我们随机选取元素，以期能够恰好命中这一集合。
 
-### 例：[Gym 101550I](https://codeforces.com/gym/101550/attachments)
-
-???+ note "简要题意"
-    有一张图形如：两条平行的链，加上连接两链的两条平行边。给定这张图上的若干条简单路径（每条路径表示一次通话），请你选择尽量少的边放置窃听器，以使得每条给定的路径上都有至少一个窃听器。
+???+ note "例：[Gym 101550I](https://codeforces.com/gym/101550/attachments)"
+    简要题意：有一张图形如：两条平行的链，加上连接两链的两条平行边。给定这张图上的若干条简单路径（每条路径表示一次通话），请你选择尽量少的边放置窃听器，以使得每条给定的路径上都有至少一个窃听器。
 
 整张图可以拆分为一个环加上四条从环伸出去的链。对于这四条链中的任何一条（记作 $C$），考虑在这条链上如何放置窃听器，容易通过贪心算法得到满足以下条件的方案：
 
@@ -119,10 +113,8 @@ author: Ir1d, partychicken, ouuan, Marcythm, TianyiQ
 
 综上，该算法的复杂度 $O\big(|S|\cdot -\dfrac n{|S|}\log\epsilon\big)=O(-n\log\epsilon)$。
 
-### 例：[CSES 1685 New Flight Routes](https://cses.fi/problemset/task/1685)
-
-???+ note "简要题意"
-    给定一张有向图，请你加最少的边使得该图强连通，需 **输出方案**。
+???+ note "例：[CSES 1685 New Flight Routes](https://cses.fi/problemset/task/1685)"
+    简要题意：给定一张有向图，请你加最少的边使得该图强连通，需 **输出方案**。
 
 先对原图进行强连通缩点。我们的目标显然是使每个汇点能到达每个源点。
 
@@ -185,10 +177,8 @@ $$
 
 详见 [随机增量法](../geometry/random-incremental.md)。
 
-### 例：[TopCoder MagicMolecule](https://community.topcoder.com/stat?c=problem_statement&pm=11705) 随机化解法
-
-???+ note "简要题意"
-    给定一张 $n$ 个点、带点权的无向图，在其中所有大小不小于 $\dfrac {2n}3$ 的团中，找到点权和最大的那个。
+???+ note "例：[TopCoder MagicMolecule](https://community.topcoder.com/stat?c=problem_statement&pm=11705) 随机化解法"
+    简要题意：给定一张 $n$ 个点、带点权的无向图，在其中所有大小不小于 $\dfrac {2n}3$ 的团中，找到点权和最大的那个。
     
     $n\leq 50$
 
@@ -217,9 +207,8 @@ $$
 
 ## 随机化用于哈希
 
-### 例：[UOJ #207 共价大爷游长沙](https://uoj.ac/problem/207)
-
-???+ note "简要题意"
+???+ note "例：[UOJ #207 共价大爷游长沙](https://uoj.ac/problem/207)"
+    简要题意：
     维护一棵动态变化的树，和一个动态变化的结点二元组集合。你需要支持：
     
     -   删边、加边。保证得到的还是一棵树。
@@ -277,10 +266,8 @@ $$
     -   若干个互相独立的、服从 $R$ 上的均匀分布的随机变量，它们在模意义下的和，依然服从 $R$ 上的均匀分布。自证不难。
     -   从而这种情况下的错误率也是 $P^{-1}$。
 
-### 例：[UOJ #552 同构判定鸭](https://uoj.ac/problem/552) 及其错误率分析
-
-???+ note "简要题意"
-    给定两张边权为小写字母的有向图 $G_0,G_1$，你要对这两张图分别算出「所有路径对应的字符串构成的多重集」（可能是无穷集），并判断这两个多重集是否相等。如果不相等，你要给出一个最短的串，满足它在两个多重集中的出现次数不相等。
+???+ note "例：[UOJ #552 同构判定鸭](https://uoj.ac/problem/552) 及其错误率分析"
+    简要题意：给定两张边权为小写字母的有向图 $G_0,G_1$，你要对这两张图分别算出「所有路径对应的字符串构成的多重集」（可能是无穷集），并判断这两个多重集是否相等。如果不相等，你要给出一个最短的串，满足它在两个多重集中的出现次数不相等。
 
 令 $f_{K,i,j}$ 表示图 $G_K$ 中从点 $i$ 开始的所有长为 $j$ 的路径，这些路径对应的所有字符串构成的多重集的哈希值。按照 $j$ 升序考虑每个状态，转移时枚举 $i$ 的出边并钦定该边为路径上的第一条边。
 
@@ -511,9 +498,8 @@ $$
 
 这一段证明中用到的思想被称为「耦合」，可以从字面意思来理解这种思想。本例中它体现为把两个本来独立的随机过程合二为一。
 
-#### 应用：[NERC 2019 Problem G: Game Relics](https://codeforces.com/contest/1267/problem/G)
-
-???+ note "简要题意"
+???+ note "应用：[NERC 2019 Problem G: Game Relics](https://codeforces.com/contest/1267/problem/G)"
+    简要题意：
     有若干个物品，每个物品有一个价格 $c_i$。你想要获得所有物品，为此你可以任意地进行两种操作：
     
     1.  选择一个未拥有的物品 $i$，花 $c_i$ 块钱买下来。
